@@ -1,4 +1,4 @@
-.container{
+.containerBox{
     display: flex;
     box-sizing: border-box;
     background-color:rgba(245, 245, 245, 1);
@@ -6,7 +6,7 @@
   
   
   
-  .left{
+  .leftContainer{
     background-color: black;
     height: 97.621vh;
     width: 17.5rem;
@@ -17,12 +17,12 @@
     flex-direction: column;
     padding:4vh 0vw 0vh 4vw
   }
-  .left h2{
+  .leftContainer h2{
     line-height: 15vh;
     font-size: 2.25rem;
   }
   
-  .left p{
+  .leftContainer p{
     line-height: 7vh;
     font-size: 1.125em;
     display: flex;

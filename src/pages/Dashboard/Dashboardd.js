@@ -10,6 +10,8 @@ import { PieChart } from '../../component/PieChart'
 import { LineChart } from '../../component/LineChart'
 import axios from "axios";
 import { GrCamera } from 'react-icons/gr'
+
+
 export default function Dashboardd() {
     const [ data , setData] = useState([])
     async function getRandomUsers() {
@@ -23,14 +25,15 @@ export default function Dashboardd() {
       }
 
     useEffect(()=>{
-       
     getRandomUsers()
-      
+   
     },[])
+
+
     return(
         <>
-        <div className={style.container}>
-        <div className={style.left}>
+        <div className={style.containerBox}>
+        <div className={style.leftContainer}>
         <h2>Board.</h2>
         <p className={style.dashboardHead}>  <FiPieChart className={style.menuIcon} />  Dashboard</p>
         <p> <TbTags className={style.menuIcon}/> Transactions</p>

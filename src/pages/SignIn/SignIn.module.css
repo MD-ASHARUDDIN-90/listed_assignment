@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-.container {
+.containerBox {
   border: 1px solid;
   height: 100vh;
   display: flex;
@@ -77,16 +77,9 @@
  line-height: 15px;
  text-align: center; */
 }
-.googleIcon {
-  /* width: 0.719rem;
-    height: 0.875rem; */
-  /* font-size: 0.75rem; */
-}
+
 .appleIcon {
   color: #999999;
-  /* width: 0.719rem;
-    height: 0.875rem; */
-  /* font-size: 0.75rem; */
 }
 
 

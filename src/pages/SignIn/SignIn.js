@@ -23,12 +23,13 @@ export default function SignIn() {
       const userData = {
         email,password
       }
-      alert(`${email} you are logged in`)
+      localStorage.setItem("userData" , JSON.stringify(userData))
+      alert(`${userData.email} you are logged in`)
       nav("/dashboard")
     }
   }
   return (
-    <div className={style.container}>
+    <div className={style.containerBox}>
       <div className={style.leftContainer}>
         <span>Board.</span>
       </div>
