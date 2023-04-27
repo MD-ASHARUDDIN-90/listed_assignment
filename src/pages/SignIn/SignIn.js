@@ -1,23 +1,31 @@
 import style from "./SignIn.module.css";
 import { FcGoogle } from "react-icons/fc";
 import { GrApple } from "react-icons/gr";
-import { useAuth0 } from "@auth0/auth0-react";
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
 
 export default function SignIn() {
-  const {user, loginWithRedirect } = useAuth0();
-  console.log(user)
-  const nav = useNavigate()
-  // useEffect(()=>{
-  //   if(user !== undefined){
-     
-  //   }
-  // },[])
+ const nav = useNavigate()
+ const [email, setEmail] = useState("")
+ const [password, setPassword] = useState("")
 
   const handleLogin = ()=>{
- loginWithRedirect()
- nav("/dashboard")
+    alert(` You are logged in`)
+   nav("/dashboard")
+  }
+
+  function handleSignIn(e) {
+    e.preventDefault()
+    if(email=== "" || password === ""){
+      alert("Please fill the inputs")
+    }else{
+      const userData = {
+        email,password
+      }
+      alert(`${email} you are logged in`)
+      nav("/dashboard")
+    }
   }
   return (
     <div className={style.container}>
@@ -48,18 +56,18 @@ export default function SignIn() {
               <label type="email" htmlFor="email">
                 Email address
               </label>
-              <input placeholder="jhondoe@gmail.com" />
+              <input onChange={(e)=>setEmail(e.target.value)} placeholder="jhondoe@gmail.com" />
             </div>
             <div>
               <label type="password" htmlFor="password">
                 Password
               </label>
-              <input placeholder="Password" />
+              <input  onChange={(e)=>setPassword(e.target.value)} type="password" placeholder="Password" />
             </div>
             <div className={style.forgotText}>
               <label>Forgot password?</label>
             </div>
-            <button className={style.btn}>Sign In</button>
+            <button onClick={handleSignIn} className={style.btn}>Sign In</button>
           </form>
         </div>
 
